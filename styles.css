@@ -155,13 +155,13 @@ h6 {
 }
 
 /* Hero Section */
-.magical-bg {
+.hero-section {
+  padding-top: 100px; /* Kept for larger screens to clear fixed navbar */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   background-size: 400% 400%;
   animation: gradient-shift 8s ease-in-out infinite;
   position: relative;
   overflow: hidden;
-  padding-top: 100px;
 }
 
 .colorful-bg {
@@ -1041,7 +1041,7 @@ h6 {
   display: flex;
   align-items: flex-start;
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding: 1rem;
   background: linear-gradient(
     135deg,
     rgba(255, 107, 157, 0.1),
@@ -1484,12 +1484,25 @@ h6 {
     font-size: 2.8rem;
   }
 
+  .custom-navbar {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 50px;
+  }
+
   .hero-subtitle {
     font-size: 1rem;
   }
 
   .section-title {
     font-size: 2.2rem;
+  }
+
+  .hero-buttons .magical-button-outline {
+    margin-top: 1rem;
   }
 
   .about-content {

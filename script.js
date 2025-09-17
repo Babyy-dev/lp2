@@ -653,9 +653,14 @@ document.addEventListener("DOMContentLoaded", function () {
       bsCarousel.cycle();
     });
 
-    // Add slide change effects
-    carousel.addEventListener("slide.bs.carousel", function () {
-      createSlideChangeSparkles();
+    // Add event listener to update indicators
+    const indicators = document.querySelectorAll(".magical-indicators button");
+    carousel.addEventListener("slid.bs.carousel", function (event) {
+      const activeIndex = event.to;
+      indicators.forEach((indicator) => {
+        indicator.classList.remove("active");
+      });
+      indicators[activeIndex].classList.add("active");
     });
 
     // Enhanced arrow button effects (simplified)
