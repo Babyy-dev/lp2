@@ -61,19 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ".magical-button, .magical-button-outline, .magical-button-small, .magical-submit-btn"
   );
   magicalButtons.forEach((button) => {
-    button.addEventListener("mouseenter", function () {
-      if (!isTouchDevice) {
-        this.style.transform = "translateY(-3px) scale(1.05)";
-        createButtonSparkles(this);
-      }
-    });
-
-    button.addEventListener("mouseleave", function () {
-      if (!isTouchDevice) {
-        this.style.transform = "";
-      }
-    });
-
+    // Removed mouseenter and mouseleave listeners for mobile stability
     button.addEventListener("click", function (e) {
       createClickBurst(e.target, e.clientX, e.clientY);
     });
@@ -595,24 +583,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Enhanced interactive program cards
   const programCards = document.querySelectorAll(".magical-card-hover");
   programCards.forEach((card) => {
-    card.addEventListener("mouseenter", function () {
-      const icon = this.querySelector(".rainbow-icon");
-      if (icon) {
-        icon.style.transform = "scale(1.2) rotate(10deg)";
-        icon.style.animation = "rainbow-shift 1s ease-in-out infinite";
-      }
-
-      // Add hover sparkles
-      createCardHoverSparkles(this);
-    });
-
-    card.addEventListener("mouseleave", function () {
-      const icon = this.querySelector(".rainbow-icon");
-      if (icon) {
-        icon.style.transform = "scale(1) rotate(0deg)";
-        icon.style.animation = "";
-      }
-    });
+    // Removed mouseenter and mouseleave listeners for mobile stability
   });
 
   function createCardHoverSparkles(card) {
@@ -666,14 +637,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Enhanced arrow button effects (simplified)
     const carouselButtons = document.querySelectorAll(".magical-carousel-btn");
     carouselButtons.forEach((button) => {
-      button.addEventListener("mouseenter", function () {
-        this.style.transform = "scale(1.1)";
-      });
-
-      button.addEventListener("mouseleave", function () {
-        this.style.transform = "scale(1)";
-      });
-
+      // Removed mouseenter and mouseleave listeners for mobile stability
       button.addEventListener("click", function () {
         // Simplified click effect
         createClickBurst(
@@ -925,6 +889,25 @@ window.addEventListener("scroll", function () {
           scrollButton.parentNode.removeChild(scrollButton);
         }
       }, 500);
+    }
+  }
+});
+
+// New function to close the menu on outside click
+document.addEventListener("click", function (e) {
+  const navbarCollapse = document.getElementById("navbarNav");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+
+  // Check if the menu is open and the clicked element is not inside the menu or the toggler button
+  if (
+    navbarCollapse.classList.contains("show") &&
+    !navbarCollapse.contains(e.target) &&
+    e.target !== navbarToggler &&
+    !navbarToggler.contains(e.target)
+  ) {
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    if (bsCollapse) {
+      bsCollapse.hide();
     }
   }
 });
