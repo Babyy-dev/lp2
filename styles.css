@@ -861,59 +861,61 @@ h6 {
 }
 
 .magical-carousel-btn {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 -30px;
+  margin: 0 20px;
   opacity: 1;
   transition: all 0.3s ease;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  animation: arrow-glow 2s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
   position: relative;
   overflow: hidden;
+  animation: none;
 }
 
 .magical-carousel-btn::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transition: left 0.5s;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .magical-carousel-btn:hover::before {
-  left: 100%;
+  opacity: 1;
 }
 
 .magical-carousel-btn:hover {
-  transform: translateY(-50%) scale(1.2) rotate(10deg);
+  transform: scale(1.1);
   box-shadow: 0 0 30px rgba(255, 107, 157, 0.8),
     0 0 40px rgba(78, 205, 196, 0.4);
-  animation: arrow-bounce 0.6s ease-in-out infinite,
-    arrow-glow 1s ease-in-out infinite;
+  animation: none;
 }
 
 .magical-carousel-btn i {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .magical-carousel-btn:hover i {
-  transform: scale(1.3) rotate(-10deg);
-  animation: arrow-pulse 1s ease-in-out infinite;
+  color: var(--primary-color);
+  transform: scale(1.2);
 }
 
 .magical-indicators {
@@ -1073,12 +1075,12 @@ h6 {
 }
 
 .magical-contact-item:hover {
+  transform: translateX(15px) scale(1.02);
   background: linear-gradient(
     135deg,
     rgba(255, 107, 157, 0.2),
     rgba(78, 205, 196, 0.2)
   );
-  transform: translateX(10px) scale(1.02);
   border-color: var(--primary-color);
   box-shadow: var(--magical-shadow);
 }
@@ -1147,11 +1149,6 @@ h6 {
   transform: translateY(-5px) scale(1.1) rotate(10deg);
   box-shadow: var(--magical-shadow);
   animation: bounce 0.6s ease-in-out;
-}
-
-.magical-social i {
-  position: relative;
-  z-index: 1;
 }
 
 .social-link.facebook {
@@ -1257,7 +1254,8 @@ h6 {
 @keyframes arrow-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.5),
+      0 0 10px rgba(78, 205, 196, 0.2);
     filter: brightness(1);
   }
   50% {
@@ -1553,6 +1551,27 @@ h6 {
   }
 
   .floating-emoji {
+    display: none;
+  }
+
+  .magical-card-hover,
+  .magical-special-card,
+  .magical-feature,
+  .magical-contact-item {
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  .magical-card-hover:hover,
+  .magical-special-card:hover,
+  .magical-feature:hover,
+  .magical-contact-item:hover {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .magical-card-hover::before,
+  .magical-feature::before {
     display: none;
   }
 }
