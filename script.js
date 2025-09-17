@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emoji.style.position = "fixed";
         emoji.style.left = Math.random() * window.innerWidth + "px";
         emoji.style.top = "-50px";
-        emoji.style.pointerEvents = "none";
+        emoji.style.pointerevents = "none";
         emoji.style.zIndex = "9999";
         emoji.style.fontSize = 16 + Math.random() * 16 + "px";
         emoji.style.animation = `fall ${
@@ -624,7 +624,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sparkle.style.position = "fixed";
         sparkle.style.left = rect.left + Math.random() * rect.width + "px";
         sparkle.style.top = rect.top + Math.random() * rect.height + "px";
-        sparkle.style.pointerEvents = "none";
+        sparkle.style.pointerevents = "none";
         sparkle.style.zIndex = "9999";
         sparkle.style.fontSize = "12px";
         sparkle.style.animation = "twinkle 1s ease-out forwards";
@@ -696,7 +696,7 @@ document.addEventListener("DOMContentLoaded", function () {
           rect.left + rect.width / 2 + (Math.random() - 0.5) * 40 + "px";
         sparkle.style.top =
           rect.top + rect.height / 2 + (Math.random() - 0.5) * 40 + "px";
-        sparkle.style.pointerEvents = "none";
+        sparkle.style.pointerevents = "none";
         sparkle.style.zIndex = "9999";
         sparkle.style.fontSize = "14px";
         sparkle.style.animation = `arrow-sparkle-${i} 1.2s ease-out forwards`;
@@ -720,7 +720,7 @@ document.addEventListener("DOMContentLoaded", function () {
         element.style.position = "fixed";
         element.style.left = rect.left + rect.width / 2 + "px";
         element.style.top = rect.top + rect.height / 2 + "px";
-        element.style.pointerEvents = "none";
+        element.style.pointerevents = "none";
         element.style.zIndex = "9999";
         element.style.fontSize = "18px";
         element.style.animation = `arrow-click-burst-${index} 1s ease-out forwards`;
@@ -742,7 +742,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sparkle.style.position = "fixed";
         sparkle.style.left = window.innerWidth / 2 + (i - 2) * 60 + "px";
         sparkle.style.top = "50%";
-        sparkle.style.pointerEvents = "none";
+        sparkle.style.pointerevents = "none";
         sparkle.style.zIndex = "9999";
         sparkle.style.fontSize = "24px";
         sparkle.style.animation = "bounceIn 1s ease-out forwards";
@@ -830,7 +830,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emoji.style.position = "fixed";
         emoji.style.left = Math.random() * window.innerWidth + "px";
         emoji.style.top = "-50px";
-        emoji.style.pointerEvents = "none";
+        emoji.style.pointerevents = "none";
         emoji.style.zIndex = "9999";
         emoji.style.fontSize = 14 + Math.random() * 10 + "px";
         emoji.style.animation = `welcome-fall ${
