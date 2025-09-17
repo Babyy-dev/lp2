@@ -196,8 +196,8 @@ h6 {
 .colorful-bg {
   background: linear-gradient(45deg, #ffb6c1, #87ceeb, #98fb98, #f0e68c);
   background-size: 400% 400%;
-  animation: colorful-shift 6s ease-in-out infinite;
-  margin-top: 0 !important;
+  /* animation: colorful-shift 6s ease-in-out infinite; */ /* FIX: Animation removed */
+  margin-top: -1px;
 }
 
 .gradient-bg {
@@ -552,7 +552,6 @@ h6 {
 .programs-section {
   padding-top: 100px;
   padding-bottom: 100px;
-  margin-top: 0 !important;
 }
 
 .magical-card-hover {
@@ -1543,8 +1542,12 @@ h6 {
 
   /* Changes for the mobile menu */
   .navbar-collapse.show {
-    opacity: 0.8;
-    border: 1px solid rgba(255, 182, 193, 0.6);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--magical-shadow);
   }
 }
 
@@ -1667,3 +1670,42 @@ html {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 182, 193, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
+
+/* --- FIXES FOR LAYOUT AND ALIGNMENT --- */
+
+/* 1. Center Text in Floating Card */
+/* This makes the icon and text in the "楽しく学習中！" card align perfectly in the center. */
+.magical-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Adds a little space between the star and the text */
+}
+
+/* 2. Fixes for Mobile and Tablet View */
+@media (max-width: 991.98px) {
+  /* 2a. Remove Extra Space on the Right Side */
+  /* This pulls the floating card back into the screen on tablets and phones to prevent horizontal scrolling. */
+  .hero-image .magical-card {
+    right: 15px;
+    top: 15px;
+  }
+
+  /* 2b. Reduce Large Vertical Gaps Between Sections */
+  /* This makes the hero section shorter and reduces the top/bottom padding on all sections for a more compact mobile layout. */
+  .hero-section .row.min-vh-100 {
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .programs-section,
+  .about-section,
+  .testimonials-section,
+  .contact-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+/* --- END OF FIXES --- */
