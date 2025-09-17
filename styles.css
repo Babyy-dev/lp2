@@ -28,6 +28,12 @@
   --border-radius: 15px;
 }
 
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -774,6 +780,7 @@ h6 {
 
 .magical-feature i {
   font-size: 1.5rem;
+  color: var(--primary-color);
   margin-right: 1rem;
   margin-top: 0.2rem;
   transition: all 0.3s ease;
@@ -829,18 +836,6 @@ h6 {
   background-clip: padding-box;
   position: relative;
   overflow: hidden;
-}
-
-.magical-testimonial::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--gradient-rainbow);
-  opacity: 0.05;
-  z-index: -1;
 }
 
 .magical-testimonial blockquote {
