@@ -440,6 +440,7 @@ h6 {
 /* Programs Section */
 .programs-section {
   padding: 100px 0;
+  margin-top: -100px;
 }
 
 .magical-card-hover {
@@ -521,7 +522,6 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: rainbow-shift 3s ease-in-out infinite;
 }
 
 .magical-card-hover h4 {
