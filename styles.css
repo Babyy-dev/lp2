@@ -196,8 +196,8 @@ h6 {
 .colorful-bg {
   background: linear-gradient(45deg, #ffb6c1, #87ceeb, #98fb98, #f0e68c);
   background-size: 400% 400%;
-  /* animation: colorful-shift 6s ease-in-out infinite; */ /* FIX: Animation removed */
-  margin-top: -1px;
+  animation: colorful-shift 6s ease-in-out infinite;
+  margin-top: 0 !important;
 }
 
 .gradient-bg {
